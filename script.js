@@ -48,7 +48,26 @@ window.addEventListener("load", function() {
         } else {
            cargoMassInput.innerHTML = "Weight is good!";
         }
-         
+      
+        if (!isNaN(pilotNameInput.value) || !isNaN(copilotNameInput.value)) {
+         alert("Names can't be numbers!")
+      faulty.style.visibility = "invisible";
+      // fuelStatus.innerHTML = "Not enough fuel for the journey!";
+      // launchStatus.innerHTML = "Shuttle not ready for launch";
+      // launchStatus.style.color = "Red";
+      isShuttleReady = false;
+      event.preventDefault();
+        };
+   //   if (Number(copilotNameInput.value) === (copilotNameInput.value)) {
+   //    alert("coNames can't be numbers either!")
+   // faulty.style.visibility = "invisible";
+   // // fuelStatus.innerHTML = "Not enough fuel for the journey!";
+   // // launchStatus.innerHTML = "Shuttle not ready for launch";
+   // // launchStatus.style.color = "Red";
+   // isShuttleReady = false;
+   // event.preventDefault();
+
+
         if(isShuttleReady) {
            let pilotName = pilotNameInput.value;
            let copilotName = copilotNameInput.value;
@@ -62,14 +81,12 @@ window.addEventListener("load", function() {
          </ol>`;
          launchStatus.innerHTML = "Shuttle is ready for launch!";
          launchStatus.style.color = "Green";
-         event.preventDefault();
-         
-        };
-      };
+         event.preventDefault()
+            };
+          };
+        });
       });
 
-
-   });
 
 
    
